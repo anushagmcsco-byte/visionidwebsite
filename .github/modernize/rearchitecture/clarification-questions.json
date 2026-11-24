@@ -1,0 +1,588 @@
+{
+  "schema": "clarification-questions/v1",
+  "generated_at": "2026-11-22T15:20:00Z",
+  "user_input": "convert these entire application to react+vite project and keep the ux/ui design should be same and add the admin panel for these website with database connection to it and add blogs and contact form enquiry should be sored in backend and from backend add the blogs and relfect to the frontend it available on the every device and seo should be implement based on the website with feature image related to the website",
+  "title": "VisionID React and Admin Rewrite",
+  "assessment_snapshot": {
+    "intro": "The workspace contains a live-style VisionID company website and a small PHP deployment package:",
+    "bullets": [
+      "The public site is currently a single HTML/CSS/JavaScript page with an existing dark-and-light responsive design, custom CSS variables, and a canvas background.",
+      "The current contact endpoint is PHP and sends contact, partner, careers, and chat leads by email; it does not store enquiries in a database.",
+      "No React/Vite package, database schema, admin panel, or authentication implementation was detected. Deployment notes target GoDaddy cPanel.",
+      "The page already includes basic description metadata and Organization structured data; the requested rewrite also calls for blog SEO and relevant feature images."
+    ]
+  },
+  "proposed_outcome": "Rebuild the existing VisionID website as a responsive React + Vite application while retaining its UX/UI, add a secured admin area for managing blog posts and viewing contact enquiries, persist the content and enquiries in a hosted database, publish blog content dynamically on the public site, and implement page-level SEO and relevant feature images. The backend framework, database/provider, deployment target, and migration details need confirmation before the rewrite is planned.",
+  "scope": [
+    "frontend",
+    "backend",
+    "generic"
+  ],
+  "status": "awaiting_answers",
+  "questions": [
+    {
+      "id": "F1",
+      "kit": "frontend",
+      "field": "target.framework",
+      "title": "React and Vite versions",
+      "question": "Which React and Vite versions should the rewrite target?",
+      "importance": "required",
+      "impact": 5,
+      "recommended": "React and Vite current stable compatible versions",
+      "default": null,
+      "prefilled": true,
+      "prefilled_value": "React and Vite current stable compatible versions",
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "React and Vite current stable compatible versions",
+          "label": "React and Vite current stable compatible versions"
+        },
+        {
+          "value": "React 19 with Vite 7",
+          "label": "React 19 with Vite 7"
+        },
+        {
+          "value": "React 18 with Vite 6",
+          "label": "React 18 with Vite 6"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "F2",
+      "kit": "frontend",
+      "field": "target.component_library",
+      "title": "UI component approach",
+      "question": "What component and styling approach should the new frontend use?",
+      "importance": "required",
+      "impact": 5,
+      "recommended": "Custom React components and existing CSS styles",
+      "default": null,
+      "prefilled": true,
+      "prefilled_value": "Custom React components and existing CSS styles",
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Custom React components and existing CSS styles",
+          "label": "Custom React components and existing CSS styles"
+        },
+        {
+          "value": "shadcn/ui",
+          "label": "shadcn/ui"
+        },
+        {
+          "value": "Material UI",
+          "label": "Material UI"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "F3",
+      "kit": "frontend",
+      "field": "visual.screenshots",
+      "title": "Current UI reference",
+      "question": "Provide screenshots, screen recordings, or a URL where the current website can be viewed so the rewrite can preserve its visual design and responsive behavior.",
+      "importance": "required",
+      "impact": 5,
+      "recommended": null,
+      "default": null,
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "type": "text",
+      "options": []
+    },
+    {
+      "id": "F4",
+      "kit": "frontend",
+      "field": "visual.design_system",
+      "title": "Design system reference",
+      "question": "Should the rewrite reproduce the existing site's design pixel-by-pixel using styles extracted from the current source, or follow another design system?",
+      "importance": "required",
+      "impact": 5,
+      "recommended": "Match the existing UI pixel-by-pixel using extracted CSS custom properties and styles",
+      "default": "Match existing pixel-by-pixel using extracted CSS custom properties",
+      "prefilled": true,
+      "prefilled_value": "Match the existing UI pixel-by-pixel using extracted CSS custom properties and styles",
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Match the existing UI pixel-by-pixel using extracted CSS custom properties and styles",
+          "label": "Match the existing UI pixel-by-pixel using extracted CSS custom properties and styles"
+        },
+        {
+          "value": "Use a different design system (provide its URL or file path)",
+          "label": "Use a different design system (provide its URL or file path)"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "F5",
+      "kit": "frontend",
+      "field": "compliance.accessibility",
+      "title": "Accessibility target",
+      "question": "What accessibility standard should the new website target?",
+      "importance": "recommended",
+      "impact": 3,
+      "recommended": "WCAG 2.1 AA",
+      "default": "WCAG 2.1 AA",
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "WCAG 2.1 AA",
+          "label": "WCAG 2.1 AA"
+        },
+        {
+          "value": "WCAG 2.2 AA",
+          "label": "WCAG 2.2 AA"
+        },
+        {
+          "value": "No specific standard",
+          "label": "No specific standard"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "F6",
+      "kit": "frontend",
+      "field": "compatibility.browsers",
+      "title": "Browser support",
+      "question": "Which browsers and versions should the website support?",
+      "importance": "recommended",
+      "impact": 2,
+      "recommended": "Modern evergreen browsers: Chrome, Firefox, Safari, and Edge (latest 2 major versions)",
+      "default": "modern evergreen (Chrome, Firefox, Safari, Edge — latest 2 major versions)",
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Modern evergreen browsers: Chrome, Firefox, Safari, and Edge (latest 2 major versions)",
+          "label": "Modern evergreen browsers: Chrome, Firefox, Safari, and Edge (latest 2 major versions)"
+        },
+        {
+          "value": "Other (specify browsers and versions)",
+          "label": "Other (specify browsers and versions)"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "F7",
+      "kit": "frontend",
+      "field": "responsive.breakpoints",
+      "title": "Responsive behavior",
+      "question": "How should the new site handle responsive layouts and breakpoints?",
+      "importance": "recommended",
+      "impact": 3,
+      "recommended": "Mobile-first and match the current site's responsive breakpoints",
+      "default": "mobile-first using existing breakpoints detected from codebase",
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Mobile-first and match the current site's responsive breakpoints",
+          "label": "Mobile-first and match the current site's responsive breakpoints"
+        },
+        {
+          "value": "Use a new breakpoint strategy (specify)",
+          "label": "Use a new breakpoint strategy (specify)"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "F8",
+      "kit": "frontend",
+      "field": "i18n.locales",
+      "title": "Languages and locales",
+      "question": "Which languages should the website support?",
+      "importance": "optional",
+      "impact": 2,
+      "recommended": null,
+      "default": "preserve current locales; keep existing i18n library if present",
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Preserve current languages; keep existing localization if present",
+          "label": "Preserve current languages; keep existing localization if present"
+        },
+        {
+          "value": "English only",
+          "label": "English only"
+        },
+        {
+          "value": "Specify additional languages",
+          "label": "Specify additional languages"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "F9",
+      "kit": "frontend",
+      "field": "state_mgmt.preference",
+      "title": "Frontend state management",
+      "question": "Do you have a preference for frontend state management and data fetching?",
+      "importance": "optional",
+      "impact": 1,
+      "recommended": null,
+      "default": "preserve existing pattern if identifiable; otherwise recommend minimal (component state + server-state library)",
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Minimal component state plus a server-state library when needed",
+          "label": "Minimal component state plus a server-state library when needed"
+        },
+        {
+          "value": "Zustand",
+          "label": "Zustand"
+        },
+        {
+          "value": "Redux Toolkit",
+          "label": "Redux Toolkit"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "F10",
+      "kit": "frontend",
+      "field": "routing.preference",
+      "title": "Frontend routing",
+      "question": "Which routing approach should the React application use?",
+      "importance": "optional",
+      "impact": 2,
+      "recommended": null,
+      "default": "use the de-facto router for the chosen target framework",
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "React Router",
+          "label": "React Router"
+        },
+        {
+          "value": "Use the simplest router compatible with the selected React and Vite setup",
+          "label": "Use the simplest router compatible with the selected React and Vite setup"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "B1",
+      "kit": "backend",
+      "field": "target.framework",
+      "title": "Backend framework",
+      "question": "Which backend framework or service should power admin login, blog management, and enquiry storage?",
+      "importance": "required",
+      "impact": 5,
+      "recommended": "Node.js with Express API (recommended if the chosen host supports Node.js)",
+      "default": null,
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Node.js with Express API (recommended if the chosen host supports Node.js)",
+          "label": "Node.js with Express API (recommended if the chosen host supports Node.js)"
+        },
+        {
+          "value": "PHP with Laravel (works with PHP hosting; confirm host support)",
+          "label": "PHP with Laravel (works with PHP hosting; confirm host support)"
+        },
+        {
+          "value": "Keep the current PHP API and extend it",
+          "label": "Keep the current PHP API and extend it"
+        },
+        {
+          "value": "Managed backend such as Supabase",
+          "label": "Managed backend such as Supabase"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "B2",
+      "kit": "backend",
+      "field": "api.contract_preservation",
+      "title": "API compatibility",
+      "question": "What compatibility policy should apply to the existing contact, partner, careers, and chat form endpoints and their behavior?",
+      "importance": "required",
+      "impact": 4,
+      "recommended": "Must preserve existing behavior and endpoint contracts where practical",
+      "default": "must preserve",
+      "prefilled": true,
+      "prefilled_value": "Must preserve existing behavior and endpoint contracts where practical",
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Must preserve existing behavior and endpoint contracts where practical",
+          "label": "Must preserve existing behavior and endpoint contracts where practical"
+        },
+        {
+          "value": "May introduce versioned API routes and migrate the frontend",
+          "label": "May introduce versioned API routes and migrate the frontend"
+        },
+        {
+          "value": "Can redesign the API; no existing clients need compatibility",
+          "label": "Can redesign the API; no existing clients need compatibility"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "B3",
+      "kit": "backend",
+      "field": "data.migration_strategy",
+      "title": "Database and migration",
+      "question": "Which database and data migration approach should be used? No database-backed blog or enquiries store was detected in the current project; use Additional Constraints to name a preferred database/provider if you have one.",
+      "importance": "required",
+      "impact": 4,
+      "recommended": "Defer the database and migration choice until implementation research",
+      "default": "TBD / assess in research phase",
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Create a new database schema; there is no existing application database to migrate",
+          "label": "Create a new database schema; there is no existing application database to migrate"
+        },
+        {
+          "value": "Use an existing database/schema (provide its details)",
+          "label": "Use an existing database/schema (provide its details)"
+        },
+        {
+          "value": "Defer the database and migration choice until implementation research",
+          "label": "Defer the database and migration choice until implementation research"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "B4",
+      "kit": "backend",
+      "field": "auth.framework",
+      "title": "Admin authentication",
+      "question": "How should administrators authenticate and what access model should be used?",
+      "importance": "recommended",
+      "impact": 4,
+      "recommended": "Secure email/password login with server-managed sessions and role-based access",
+      "default": "preserve existing auth mechanism; detect from codebase",
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Secure email/password login with server-managed sessions and role-based access",
+          "label": "Secure email/password login with server-managed sessions and role-based access"
+        },
+        {
+          "value": "Use an existing identity provider (specify)",
+          "label": "Use an existing identity provider (specify)"
+        },
+        {
+          "value": "No admin login (not recommended for a production admin panel)",
+          "label": "No admin login (not recommended for a production admin panel)"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "B5",
+      "kit": "backend",
+      "field": "nfr.sla",
+      "title": "Performance and availability",
+      "question": "What performance or availability targets should the backend meet?",
+      "importance": "recommended",
+      "impact": 2,
+      "recommended": "Match current production baseline with no regression",
+      "default": "match current production baseline; no regression",
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Match current production baseline with no regression",
+          "label": "Match current production baseline with no regression"
+        },
+        {
+          "value": "Specify measurable latency, throughput, or availability targets",
+          "label": "Specify measurable latency, throughput, or availability targets"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "G1",
+      "kit": "generic",
+      "field": "success.definition",
+      "title": "Definition of done",
+      "question": "What outcome will define a successful conversion?",
+      "importance": "required",
+      "impact": 5,
+      "recommended": "Preserve current public-site behavior and UX/UI; deliver a secure admin panel, database-backed blog and contact enquiries, dynamic public blogs, responsive behavior, and SEO",
+      "default": "feature parity with the current system; all existing user-facing behaviors preserved",
+      "prefilled": true,
+      "prefilled_value": "Preserve current public-site behavior and UX/UI; deliver a secure admin panel, database-backed blog and contact enquiries, dynamic public blogs, responsive behavior, and SEO",
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Preserve current public-site behavior and UX/UI; deliver a secure admin panel, database-backed blog and contact enquiries, dynamic public blogs, responsive behavior, and SEO",
+          "label": "Preserve current public-site behavior and UX/UI; deliver a secure admin panel, database-backed blog and contact enquiries, dynamic public blogs, responsive behavior, and SEO"
+        },
+        {
+          "value": "Specify another acceptance definition",
+          "label": "Specify another acceptance definition"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "G2",
+      "kit": "generic",
+      "field": "out_of_scope",
+      "title": "Out-of-scope boundaries",
+      "question": "Are there pages, integrations, or behaviors that must not be changed during the conversion?",
+      "importance": "recommended",
+      "impact": 2,
+      "recommended": null,
+      "default": "no explicit exclusions; agent will infer from project structure",
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "No explicit exclusions; infer from current project structure",
+          "label": "No explicit exclusions; infer from current project structure"
+        },
+        {
+          "value": "I will specify exclusions",
+          "label": "I will specify exclusions"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "G3",
+      "kit": "generic",
+      "field": "existing_tests.posture",
+      "title": "Existing test policy",
+      "question": "How should existing tests be treated during the rewrite?",
+      "importance": "recommended",
+      "impact": 3,
+      "recommended": "Must pass; preserve or replace coverage without regressions",
+      "default": "must pass",
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "Must pass; preserve or replace coverage without regressions",
+          "label": "Must pass; preserve or replace coverage without regressions"
+        },
+        {
+          "value": "Can rewrite tests with equivalent coverage",
+          "label": "Can rewrite tests with equivalent coverage"
+        },
+        {
+          "value": "Existing tests may be ignored; add new tests from scratch",
+          "label": "Existing tests may be ignored; add new tests from scratch"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "G4",
+      "kit": "generic",
+      "field": "target.output_location",
+      "title": "Rewrite output location",
+      "question": "Where should the rewritten React + Vite application and backend be created?",
+      "importance": "required",
+      "impact": 4,
+      "recommended": "New sibling directory: visionid-godaddy-new",
+      "default": "new sibling directory: visionid-godaddy-new",
+      "prefilled": false,
+      "prefilled_value": null,
+      "answer": null,
+      "depends_on": null,
+      "options": [
+        {
+          "value": "New sibling directory: visionid-godaddy-new",
+          "label": "New sibling directory: visionid-godaddy-new"
+        },
+        {
+          "value": "Convert the current project in place",
+          "label": "Convert the current project in place"
+        }
+      ],
+      "allow_other": true,
+      "type": "single_select"
+    },
+    {
+      "id": "G5",
+      "kit": "generic",
+      "field": "constraints.additional",
+      "title": "Additional constraints",
+      "question": "Add any constraints not covered above. In particular, specify the deployment/hosting provider, preferred database and image/file storage provider, who should access the admin panel, and whether existing blog/news content must be imported. If none, leave the default.",
+      "importance": "optional",
+      "impact": 4,
+      "recommended": null,
+      "default": "None beyond the decisions listed in this specification.",
+      "prefilled": true,
+      "prefilled_value": "None beyond the decisions listed in this specification.",
+      "answer": null,
+      "depends_on": null,
+      "type": "text",
+      "options": []
+    }
+  ]
+}

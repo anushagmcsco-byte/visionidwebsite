@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "updated": "2026-11-14T13:30:00+05:30",
+  "items": [
+    {
+      "id": "sample-dis-1",
+      "type": "disruption",
+      "sample": true,
+      "title": "Cloud email and collaboration service: sign-in delays",
+      "summary": "Some users saw delays signing in and syncing mail for about two hours. The provider has confirmed full recovery.",
+      "action": "No action needed. If users still see issues, ask them to sign out and sign in again.",
+      "status": "Resolved",
+      "severity": "Major",
+      "date": "2026-11-13",
+      "source": "Provider's public status page",
+      "url": ""
+    },
+    {
+      "id": "sample-dis-2",
+      "type": "disruption",
+      "sample": true,
+      "title": "Code hosting platform: build pipelines delayed",
+      "summary": "Automated build and deployment jobs are starting later than usual. The provider is applying a fix.",
+      "action": "Avoid scheduling urgent releases until the provider reports full recovery.",
+      "status": "Recovering",
+      "severity": "Major",
+      "date": "2026-11-14",
+      "source": "Provider's public status page",
+      "url": ""
+    },
+    {
+      "id": "sample-vul-1",
+      "type": "vulnerability",
+      "sample": true,
+      "title": "Critical flaw in a widely used VPN gateway",
+      "summary": "An unauthenticated attacker could run code on affected devices. The vendor has released fixed versions.",
+      "action": "Apply the vendor patch, restrict admin access to trusted networks and review logs for unusual logins.",
+      "status": "Patch available",
+      "severity": "Critical",
+      "cvss": 9.8,
+      "ref": "CVE-2026-XXXXX",
+      "date": "2026-11-12",
+      "source": "NIST NVD / CERT-In advisory",
+      "url": ""
+    },
+    {
+      "id": "sample-vul-2",
+      "type": "vulnerability",
+      "sample": true,
+      "title": "High-severity issue in an open-source web server module",
+      "summary": "Specially crafted requests could expose data from server memory. A fixed release is available.",
+      "action": "Upgrade to the fixed release and restart the service.",
+      "status": "Fix released",
+      "severity": "High",
+      "cvss": 8.1,
+      "ref": "CVE-2026-YYYYY",
+      "date": "2026-11-10",
+      "source": "NIST NVD",
+      "url": ""
+    },
+    {
+      "id": "prac-certin-6h",
+      "type": "practice",
+      "title": "Report cyber incidents to CERT-In within 6 hours",
+      "summary": "Under CERT-In's Directions of 28 April 2022, specified cyber incidents must be reported within 6 hours of noticing them. ICT system logs must be kept for 180 days within India, and system clocks synchronised to NIC or NPL time servers.",
+      "action": "Keep an incident-reporting contact and runbook ready, and check that log retention meets 180 days.",
+      "date": "2026-11-01",
+      "ref": "CERT-In Directions, 28 April 2022",
+      "source": "CERT-In",
+      "url": "https://www.cert-in.org.in/"
+    },
+    {
+      "id": "prac-nist-csf2",
+      "type": "practice",
+      "title": "Use NIST Cybersecurity Framework 2.0 as your checklist",
+      "summary": "CSF 2.0, released in February 2024, adds a sixth function, Govern, to Identify, Protect, Detect, Respond and Recover. It applies to organisations of any size.",
+      "action": "Map your current controls to the six functions and fix the biggest gaps first.",
+      "date": "2026-10-20",
+      "ref": "NIST CSF 2.0",
+      "source": "NIST",
+      "url": "https://www.nist.gov/cyberframework"
+    },
+    {
+      "id": "prac-nist-pqc",
+      "type": "practice",
+      "title": "Start planning for post-quantum cryptography",
+      "summary": "NIST published its first post-quantum standards in August 2024: FIPS 203 (ML-KEM), FIPS 204 (ML-DSA) and FIPS 205 (SLH-DSA).",
+      "action": "List where you use RSA and ECC, and prioritise systems that protect long-lived data.",
+      "date": "2026-10-10",
+      "ref": "NIST FIPS 203, 204, 205",
+      "source": "NIST",
+      "url": "https://csrc.nist.gov/projects/post-quantum-cryptography"
+    },
+    {
+      "id": "prac-nist-mfa",
+      "type": "practice",
+      "title": "Use phishing-resistant multi-factor authentication",
+      "summary": "NIST digital identity guidelines recommend multi-factor authentication, and phishing-resistant methods for higher-risk access.",
+      "action": "Turn on MFA for all admin, remote and email access, starting with privileged accounts.",
+      "date": "2026-09-25",
+      "ref": "NIST SP 800-63B",
+      "source": "NIST",
+      "url": "https://pages.nist.gov/800-63-3/sp800-63b.html"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "output": "../public_html/news.json",
+  "state_dir": "data",
+  "require_approval": true,
+  "naming": "anonymous",
+  "min_impact": [
+    "major",
+    "critical"
+  ],
+  "max_age_hours": {
+    "disruption": 72,
+    "vulnerability": 720
+  },
+  "status_sources": [
+    {
+      "key": "github",
+      "kind": "statuspage",
+      "name": "GitHub",
+      "label": "Code hosting platform",
+      "url": "https://www.githubstatus.com/api/v2/incidents.json",
+      "area": "build and code services"
+    },
+    {
+      "key": "cloudflare",
+      "kind": "statuspage",
+      "name": "Cloudflare",
+      "label": "Global CDN and DNS provider",
+      "url": "https://www.cloudflarestatus.com/api/v2/incidents.json",
+      "area": "network services"
+    },
+    {
+      "key": "atlassian",
+      "kind": "statuspage",
+      "name": "Atlassian Cloud",
+      "label": "Project collaboration platform",
+      "url": "https://status.atlassian.com/api/v2/incidents.json",
+      "area": "collaboration services"
+    },
+    {
+      "key": "gcp",
+      "kind": "google",
+      "name": "Google Cloud",
+      "label": "Public cloud platform",
+      "url": "https://status.cloud.google.com/incidents.json",
+      "base": "https://status.cloud.google.com/",
+      "area": "cloud services"
+    },
+    {
+      "key": "gworkspace",
+      "kind": "google",
+      "name": "Google Workspace",
+      "label": "Cloud email and collaboration service",
+      "url": "https://www.google.com/appsstatus/dashboard/incidents.json",
+      "base": "https://www.google.com/appsstatus/dashboard/",
+      "area": "email and collaboration services"
+    },
+    {
+      "key": "azure",
+      "kind": "rss",
+      "name": "Microsoft Azure",
+      "label": "Public cloud platform",
+      "area": "cloud services",
+      "url": "https://azure.status.microsoft/en-us/status/feed/"
+    }
+  ],
+  "nvd": {
+    "enabled": true,
+    "api_key_env": "NVD_API_KEY",
+    "lookback_days": 3,
+    "min_cvss": 9.0,
+    "watch": {
+      "vpn": "VPN gateways",
+      "firewall": "firewalls",
+      "fortios": "firewalls",
+      "pan-os": "firewalls",
+      "netscaler": "application delivery controllers",
+      "exchange server": "email servers",
+      "windows": "Windows systems",
+      "linux kernel": "Linux systems",
+      "openssl": "OpenSSL",
+      "openssh": "SSH servers",
+      "apache": "Apache software",
+      "nginx": "web servers",
+      "tomcat": "Java application servers",
+      "postgresql": "PostgreSQL databases",
+      "mysql": "MySQL databases",
+      "oracle database": "Oracle databases",
+      "vmware": "virtualisation platforms",
+      "ios xe": "network devices",
+      "router": "network routers",
+      "switch": "network switches",
+      "wordpress": "WordPress sites",
+      "chrome": "web browsers"
+    }
+  }
+}
