@@ -4,7 +4,7 @@ export const isSupabaseConfigured = Boolean(projectUrl && publishableKey);
 export const supabaseUrl = projectUrl;
 
 export async function supabaseRequest(path, { token, method = 'GET', body, headers = {} } = {}) {
-  if (!isSupabaseConfigured) throw new Error('Supabase is not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY in .env.local.');
+  if (!isSupabaseConfigured) throw new Error('Supabase is not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY in the deployment environment, or in .env.local for local Vite.');
   const h = new Headers({ apikey: publishableKey, ...headers });
   h.set('Authorization', `Bearer ${token || publishableKey}`);
   let payload = body;
