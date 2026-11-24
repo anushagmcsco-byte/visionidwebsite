@@ -7,7 +7,7 @@ import {isSupabaseConfigured, supabaseRequest, supabaseUrl, signIn, restoreSessi
 const POST_FIELDS='id,title,slug,excerpt,body,category,author,status,feature_image,seo_title,seo_description,canonical_url,created_at,updated_at';
 const ENQUIRY_FIELDS='id,kind,name,email,phone,message,fields_json,status,created_at,updated_at';
 const supabaseSetupMessage=import.meta.env.PROD
- ? 'Supabase is not configured for this deployment. Add VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY to your Netlify environment variables, then redeploy.'
+ ? 'Admin sign-in is temporarily unavailable. Please contact the site administrator.'
  : 'Set VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY in .env.local, then restart Vite.';
 function LegacySite(){
  useEffect(()=>{
